@@ -1,0 +1,26 @@
+Node
+sudo apt update
+
+sudo apt install -y nodejs git
+
+git clone --branch v0.2.2 https://github.com/skyportlabs/panel
+
+mv panel skyport
+
+cd skyport
+
+git switch -C v0.2.2
+
+npm install
+
+cd ..
+
+git clone --branch v0.2.2 https://github.com/skyportlabs/skyportd
+
+cd skyportd
+
+git switch -C v0.2.2
+
+npm install
+
+npm run configure -- --panel http://localhost:3001 --key 3e991770-badf-4943-a76d-8e92095bd4ca
